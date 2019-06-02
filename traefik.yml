@@ -18,6 +18,8 @@ networks:
   drupal:
     external:
       name: drupal_default
+      #port: 8001
   curemint:
     external:
       name: curemint_default
+      #port: 8000
