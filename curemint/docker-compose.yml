@@ -55,9 +55,9 @@ services:
       NGINX_STATIC_OPEN_FILE_CACHE: "off"
       NGINX_ERROR_LOG_LEVEL: debug
       NGINX_BACKEND_HOST: php
-      NGINX_SERVER_ROOT: /var/www/html/
+      NGINX_SERVER_ROOT: /var/www/html/web/
       NGINX_VHOST_PRESET: $NGINX_VHOST_PRESET
-      NGINX_DRUPAL_FILE_PROXY_URL: app.todays-dental.local,app.comfort-dental.local,app.clement.local,app.gpsdental.local,app.investor-relationship.local,app.obteam.local,app.trunkey.local,app.udc.local
+      NGINX_DRUPAL_FILE_PROXY_URL: app.todays-dental.local,app.comfort-dental.local,app.clement.local,app.gpsdental.local,app.investor-relationship.local,app.obteam.local,app.trunkey.local,app.udc.local,curemint.docker.localhost
     volumes:
 #      - ./code/:/var/www/html
 # For macOS users (https://wodby.com/stacks/drupal/docs/local/docker-for-mac/)
@@ -66,7 +66,7 @@ services:
     labels:
       - 'traefik.backend=${PROJECT_NAME}_nginx'
       - 'traefik.port=80'
-      - 'traefik.frontend.rule=Host:app.todays-dental.local,app.comfort-dental.local,app.clement.local,app.gpsdental.local,app.investor-relationship.local,app.obteam.local,app.trunkey.local,app.udc.local'
+      - 'traefik.frontend.rule=Host:app.todays-dental.local,app.comfort-dental.local,app.clement.local,app.gpsdental.local,app.investor-relationship.local,app.obteam.local,app.trunkey.local,app.udc.local,curemint.docker.localhost'
 
   mailhog:
     image: mailhog/mailhog
