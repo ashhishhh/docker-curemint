@@ -8,6 +8,7 @@ services:
     networks:
       - drupal
       - curemint
+      - 8world
     ports:
       - '80:80'
       - '8080:8080'
@@ -18,6 +19,12 @@ networks:
   drupal:
     external:
       name: drupal_default
+      #port: 8001
   curemint:
     external:
       name: curemint_default
+      #port: 8000
+  8world:
+    external:
+      name: 8world_default
+      #port: 8002
